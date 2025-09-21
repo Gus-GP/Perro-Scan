@@ -97,9 +97,20 @@ struct ScannerView: View {
     }
     
     private var headerText: some View {
-        Text(viewModel.result.isEmpty ? "Select a photo to scan" : "Looks Like: \(viewModel.result.prediction)!")
-            .font(.headline)
-            .animation(.easeInOut(duration: 0.5), value: viewModel.result.prediction)
+        VStack(spacing: 4) {
+            Text(viewModel.result.isEmpty ? "Select a photo to scan" : "Looks Like: \(viewModel.result.prediction)!")
+                .font(.headline)
+                .multilineTextAlignment(.center)
+                .animation(.easeInOut(duration: 0.5), value: viewModel.result.prediction)
+            
+            if viewModel.result.isEmpty {
+                Text("AI-powered dog breed identification")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                    .transition(.opacity.combined(with: .move(edge: .top)))
+            }
+        }
+        .animation(.easeInOut(duration: 0.5), value: viewModel.result.isEmpty)
     }
     
     private var imageDisplaySection: some View {
@@ -231,7 +242,7 @@ struct ScannerView: View {
     }
     
     private var initialActionButtons: some View {
-        VStack(spacing: 12) {
+        VStack(spacing: 16) { // Increased spacing from 12 to 16
             HStack(spacing: 20) {
                 PhotosPicker(selection: $pickedItem, matching: .images) {
                     Label("Choose Photo", systemImage: "photo")
@@ -252,20 +263,34 @@ struct ScannerView: View {
                 .buttonStyle(.bordered)
             }
             
-            Button {
-                loadSampleImage()
-            } label: {
-                Label("Use Sample", systemImage: "photo.stack")
+            // Enhanced "Use Sample" section
+            VStack(spacing: 8) {
+                Button {
+                    loadSampleImage()
+                } label: {
+                    HStack(spacing: 8) {
+                        Image(systemName: "photo.stack.fill")
+                            .font(.system(size: 16))
+                        Text("Try with Sample Photo")
+                            .fontWeight(.medium)
+                    }
                     .frame(maxWidth: .infinity)
+                    .padding(.vertical, 12)
+                }
+                .buttonStyle(.borderedProminent)
+                
+                Text("See how Perro Scan works with a demo")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+                    .multilineTextAlignment(.center)
             }
-            .buttonStyle(.borderedProminent)
         }
     }
     
     private func loadAndClassify(item: PhotosPickerItem?) async {
         guard let item,
               let data = try? await item.loadTransferable(type: Data.self),
-              let uiImage = UIImage(  data: data) else { return }
+              let uiImage = UIImage( data: data) else { return }
         
         await MainActor.run {
             viewModel.classifyImage(uiImage)
@@ -275,7 +300,7 @@ struct ScannerView: View {
     private func loadSampleImage() {
         if let url = Bundle.main.url(forResource: "sample", withExtension: "heic"),
            let data = try? Data(contentsOf: url),
-           let uiImage = UIImage(  data: data) {
+           let uiImage = UIImage( data: data) {
             viewModel.classifyImage(uiImage)
         } else {
             print("Failed to load sample.heic from bundle")

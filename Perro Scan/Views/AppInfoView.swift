@@ -25,10 +25,10 @@ struct AppInfoView: View {
                             .fontWeight(.semibold)
                         VStack(alignment: .leading, spacing: 8) {
                             Label("Photos stay on your device during analysis.", systemImage: "lock.fill")
-                            Label("We do not collect or transmit your images.", systemImage: "hand.raised.fill")
+                            Label("Perro Scan does not collect or transmit your images.", systemImage: "hand.raised.fill")
                             Label("Results are stored only in memory until you reset or close the app.", systemImage: "bolt.shield.fill")
                         }
-                        Text("Sharing is optional: If you choose to share results or images using the app's Share options, your data will be shared only with the destinations you select (e.g., Messages, Photos, social apps). We never upload content on your behalf.")
+                        Text("Sharing is optional: If you choose to share results or images using the app's Share options, your data will be shared only with the destinations you select (e.g., Messages, Photos, social apps). Perro Scan never uploads content on your behalf.")
                             .font(.footnote)
                             .foregroundColor(.secondary)
                     }
