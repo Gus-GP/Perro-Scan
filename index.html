@@ -5,56 +5,180 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perro Scan - Support</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; margin: 40px; line-height: 1.6; }
-        .container { max-width: 800px; margin: 0 auto; }
-        nav { margin-bottom: 30px; }
-        nav a { margin-right: 20px; text-decoration: none; color: #007AFF; }
-        h1 { color: #333; }
-        .section { margin-bottom: 30px; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
+            margin: 40px; 
+            line-height: 1.6; 
+            background: #fafafa;
+        }
+        .container { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        nav { 
+            margin-bottom: 30px; 
+            text-align: center;
+        }
+        nav a { 
+            margin-right: 20px; 
+            text-decoration: none; 
+            color: #007AFF; 
+            font-weight: 500;
+        }
+        nav a:hover { color: #0056b3; }
+        h1 { 
+            color: #333; 
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+        .section { 
+            margin-bottom: 30px; 
+        }
+        .section h2 {
+            color: #333;
+            border-bottom: 2px solid #007AFF;
+            padding-bottom: 5px;
+        }
+        .section ul, .section ol {
+            padding-left: 20px;
+        }
+        .section li {
+            margin-bottom: 8px;
+        }
+        
+        /* Donate Section Styling */
+        .donate-section {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            color: white;
+        }
+        .donate-section h2 {
+            color: white;
+            border: none;
+            margin-bottom: 15px;
+        }
+        .donate-section p {
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        
+        /* Custom PayPal Button Styling */
+        .paypal-button-container {
+            display: inline-block;
+            background: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease;
+        }
+        .paypal-button-container:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        .contact-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #007AFF;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <nav>
-            <a href="index.html">Support</a>
-            <a href="privacy.html">Privacy Policy</a>
+            <a href="index.html">🏠 Support</a>
+            <a href="privacy.html">🔒 Privacy Policy</a>
         </nav>
         
-        <h1>🐕 Perro Scan - App Support</h1>
+        <h1>🐕 Perro Scan</h1>
+        <p class="subtitle">AI-Powered Dog Breed Identification</p>
         
         <div class="section">
             <h2>About the App</h2>
-            <p>Perro Scan is an AI-powered dog breed identification app that works completely offline on your device for privacy.</p>
+            <p>Perro Scan is an AI-powered dog breed identification app that works completely offline on your device for complete privacy. Simply take a photo or choose from your library to get instant, accurate breed identification results.</p>
         </div>
 
         <div class="section">
             <h2>How to Use</h2>
             <ol>
-                <li>Take a photo or choose from your library</li>
-                <li>Get instant breed identification results</li>
-                <li>View detailed breed information</li>
-                <li>Share results with friends</li>
+                <li><strong>Take a photo</strong> or choose from your library</li>
+                <li><strong>Get instant results</strong> with breed identification and confidence scores</li>
+                <li><strong>View detailed information</strong> about the identified breed</li>
+                <li><strong>Share results</strong> with friends via social media or PDF reports</li>
+                <li><strong>Explore the breed library</strong> with 133+ dog breeds</li>
             </ol>
         </div>
 
         <div class="section">
             <h2>Troubleshooting</h2>
             <ul>
-                <li>Make sure photos are clear and well-lit</li>
-                <li>The app works best with full-body or head shots of dogs</li>
-                <li>Results are for entertainment and educational purposes</li>
+                <li><strong>Photo quality:</strong> Make sure photos are clear and well-lit</li>
+                <li><strong>Best shots:</strong> Full-body or clear head shots work best</li>
+                <li><strong>Mixed breeds:</strong> The app can identify mixed breed combinations</li>
+                <li><strong>Offline use:</strong> Core functionality works without internet</li>
+                <li><strong>Results:</strong> For entertainment and educational purposes</li>
             </ul>
         </div>
 
         <div class="section">
-            <h2>Contact Support</h2>
-            <p>Email: <a href="mailto:support@perroscan.com">support@perroscan.com</a></p>
+            <h2>Features</h2>
+            <ul>
+                <li>🔍 <strong>133+ Dog Breeds</strong> - Comprehensive breed database</li>
+                <li>📊 <strong>Visual Results</strong> - Pie charts, bar graphs, and detailed tables</li>
+                <li>🔒 <strong>Complete Privacy</strong> - All processing happens on your device</li>
+                <li>📱 <strong>iPad Optimized</strong> - Responsive design for all screen sizes</li>
+                <li>📄 <strong>PDF Reports</strong> - Generate professional breed analysis reports</li>
+                <li>🎨 <strong>Social Sharing</strong> - Beautiful images ready for social media</li>
+            </ul>
+        </div>
+
+        <!-- Donate Section with Your PayPal Button -->
+        <div class="donate-section">
+            <h2>☕ Support Perro Scan Development</h2>
+            <p>If Perro Scan helped identify your dog's breed, consider supporting future updates!</p>
+            <p>Your donation helps keep the app <strong>free</strong>, <strong>private</strong>, and <strong>ad-free</strong> for everyone.</p>
+            
+            <div class="paypal-button-container">
+                <form action="https://www.paypal.com/donate" method="post" target="_top">
+                    <input type="hidden" name="business" value="NXS8UQK2MEF6E" />
+                    <input type="hidden" name="no_recurring" value="0" />
+                    <input type="hidden" name="currency_code" value="USD" />
+                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+                    <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+                </form>
+            </div>
+            
+            <p style="font-size: 14px; margin-top: 15px; opacity: 0.9;">
+                🔒 Secure payments processed by PayPal<br>
+                Every donation helps support continued development and new features!
+            </p>
         </div>
 
         <div class="section">
-            <h2>Privacy</h2>
-            <p>All photos stay on your device - nothing is uploaded to servers. 
-            <a href="privacy.html">View our full Privacy Policy</a></p>
+            <h2>Privacy & Security</h2>
+            <p>🔒 All photos stay on your device - nothing is uploaded to servers.<br>
+            📱 We don't collect or store any personal information.<br>
+            🛡️ No tracking, analytics, or data sharing.<br>
+            <a href="privacy.html"><strong>View our complete Privacy Policy →</strong></a></p>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; color: #666; font-size: 14px;">
+            <p>© 2025 Perro Scan. Made with ❤️ for dog lovers everywhere.</p>
+            <p>Results are for entertainment and educational purposes.</p>
         </div>
     </div>
 </body>
