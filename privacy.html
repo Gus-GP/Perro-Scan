@@ -1,63 +1,290 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html-lang">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perro Scan - Privacy Policy</title>
+    <title>Perro Scan - Privacy Policy | iOS 18.6+ App</title>
 
     <!-- Custom Favicon using your Light_Logo -->
     <link rel="icon" type="image/png" href="Light_Logo.png">
     <link rel="apple-touch-icon" href="Light_Logo.png">
 
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; margin: 40px; line-height: 1.6; }
-        .container { max-width: 800px; margin: 0 auto; }
-        nav { margin-bottom: 30px; }
-        nav a { margin-right: 20px; text-decoration: none; color: #007AFF; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
+            margin: 40px; 
+            line-height: 1.6; 
+            background: #fafafa;
+        }
+        .container { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        nav { 
+            margin-bottom: 30px; 
+            position: relative; 
+        }
+        nav a { 
+            margin-right: 20px; 
+            text-decoration: none; 
+            color: #007AFF; 
+            font-weight: 500;
+        }
+        nav a:hover { color: #0056b3; }
         h1 { color: #333; }
         .section { margin-bottom: 30px; }
+        
+        /* Language Switcher */
+        .lang-switcher {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #007AFF;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .lang-switcher:hover {
+            background: #0056b3;
+        }
+        
+        /* App Store Button */
+        .app-store-section {
+            text-align: center;
+            margin: 30px 0;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border: 2px solid #007AFF;
+        }
+
+        .app-store-section h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .app-store-button {
+            display: inline-block;
+            margin: 10px;
+            transition: transform 0.2s ease;
+        }
+
+        .app-store-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .app-store-button img {
+            height: 60px;
+            width: auto;
+            border-radius: 12px;
+        }
+        
+        /* Hide/Show content based on language */
+        .lang-en { display: block; }
+        .lang-es { display: none; }
+        html[data-lang="es"] .lang-en { display: none; }
+        html[data-lang="es"] .lang-es { display: block; }
     </style>
 </head>
 <body>
     <div class="container">
         <nav>
-            <a href="index.html">← Back to Support</a>
-            <a href="privacy.html">Privacy Policy</a>
+            <button class="lang-switcher" onclick="toggleLanguage()" id="lang-btn">🇪🇸 Español</button>
+            
+            <!-- English Navigation -->
+            <div class="lang-en">
+                <a href="index.html">← Back to Support</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+            
+            <!-- Spanish Navigation -->
+            <div class="lang-es">
+                <a href="index.html">← Volver al Soporte</a>
+                <a href="privacy.html">Política de Privacidad</a>
+            </div>
         </nav>
         
-        <h1>Privacy Policy for Perro Scan</h1>
-        
-        <p><strong>Effective Date: September 21, 2025</strong><br>
-        <strong>Last Updated: September 21, 2025</strong></p>
+        <!-- English Content -->
+        <div class="lang-en">
+            <h1>Privacy Policy for Perro Scan</h1>
+            <p style="text-align: center; color: #666; margin-bottom: 30px;">
+                <strong>iOS 18.6+ App Available on the App Store</strong>
+            </p>
+            
+            <p><strong>Effective Date: September 21, 2025</strong><br>
+            <strong>Last Updated: September 21, 2025</strong></p>
 
-        <div class="section">
-            <h2>Our Privacy Commitment</h2>
-            <p>Perro Scan is designed with privacy as our top priority. <strong>We do not collect, store, transmit, or share any personal data or information from our users.</strong></p>
+            <div class="app-store-section">
+                <h2>📱 Download Perro Scan</h2>
+                <p><strong>Privacy-focused AI dog breed identification for iOS 18.6+</strong></p>
+                
+                <a href="https://apps.apple.com/us/app/perro-scan/id6752816612" target="_blank" class="app-store-button">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+                </a>
+            </div>
+
+            <div class="section">
+                <h2>Our Privacy Commitment</h2>
+                <p>Perro Scan is designed with privacy as our top priority. <strong>We do not collect, store, transmit, or share any personal data or information from our users.</strong> This iOS 18.6+ app operates entirely on your device with complete privacy protection.</p>
+            </div>
+
+            <div class="section">
+                <h2>Information We DO NOT Collect</h2>
+                <p>Perro Scan does <strong>not</strong> collect, access, store, or transmit:</p>
+                <ul>
+                    <li>Personal information (names, email addresses, phone numbers)</li>
+                    <li>Device identifiers or unique IDs</li>
+                    <li>Location data</li>
+                    <li>Usage analytics or behavioral data</li>
+                    <li>Photos or images you analyze</li>
+                    <li>Any data that leaves your device</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>How the App Works</h2>
+                <p>Perro Scan operates entirely <strong>on your device</strong> using:</p>
+                <ul>
+                    <li><strong>Local AI Processing</strong>: All breed identification happens on your iPhone/iPad</li>
+                    <li><strong>Device-Only Storage</strong>: All app data remains on your device</li>
+                    <li><strong>No Internet Required</strong>: Core functionality works completely offline</li>
+                    <li><strong>No Servers</strong>: We do not operate servers that receive or store your data</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>iOS 18.6+ Compatibility</h2>
+                <p>Perro Scan is optimized for iOS 18.6 and later versions, ensuring:</p>
+                <ul>
+                    <li><strong>Enhanced Privacy Controls</strong>: Takes advantage of iOS's latest privacy features</li>
+                    <li><strong>Improved Performance</strong>: Optimized for the latest iOS AI processing capabilities</li>
+                    <li><strong>Security Updates</strong>: Benefits from iOS 18.6+ security enhancements</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Contact Information</h2>
+                <p>If you have any questions about this Privacy Policy, please contact us through the App Store.</p>
+            </div>
         </div>
 
-        <div class="section">
-            <h2>Information We DO NOT Collect</h2>
-            <p>Perro Scan does <strong>not</strong> collect, access, store, or transmit:</p>
-            <ul>
-                <li>Personal information (names, email addresses, phone numbers)</li>
-                <li>Device identifiers or unique IDs</li>
-                <li>Location data</li>
-                <li>Usage analytics or behavioral data</li>
-                <li>Photos or images you analyze</li>
-                <li>Any data that leaves your device</li>
-            </ul>
+        <!-- Spanish Content -->
+        <div class="lang-es">
+            <h1>Política de Privacidad para Perro Scan</h1>
+            <p style="text-align: center; color: #666; margin-bottom: 30px;">
+                <strong>App para iOS 18.6+ disponible en el App Store</strong>
+            </p>
+            
+            <p><strong>Fecha Efectiva: 21 de Septiembre, 2025</strong><br>
+            <strong>Última Actualización: 21 de Septiembre, 2025</strong></p>
+
+            <div class="app-store-section">
+                <h2>📱 Descargar Perro Scan</h2>
+                <p><strong>Identificación de razas de perros con IA enfocada en privacidad para iOS 18.6+</strong></p>
+                
+                <a href="https://apps.apple.com/app/your-app-id" target="_blank" class="app-store-button">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Descargar en el App Store">
+                </a>
+            </div>
+
+            <div class="section">
+                <h2>Nuestro Compromiso de Privacidad</h2>
+                <p>Perro Scan está diseñado con la privacidad como nuestra máxima prioridad. <strong>No recolectamos, almacenamos, transmitimos o compartimos ningún dato personal o información de nuestros usuarios.</strong> Esta app para iOS 18.6+ opera completamente en tu dispositivo con protección total de privacidad.</p>
+            </div>
+
+            <div class="section">
+                <h2>Información que NO Recolectamos</h2>
+                <p>Perro Scan <strong>no</strong> recolecta, accede, almacena o transmite:</p>
+                <ul>
+                    <li>Información personal (nombres, direcciones de correo, números telefónicos)</li>
+                    <li>Identificadores de dispositivo o IDs únicos</li>
+                    <li>Datos de ubicación</li>
+                    <li>Análisis de uso o datos de comportamiento</li>
+                    <li>Fotos o imágenes que analices</li>
+                    <li>Cualquier dato que salga de tu dispositivo</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Cómo Funciona la App</h2>
+                <p>Perro Scan opera completamente <strong>en tu dispositivo</strong> usando:</p>
+                <ul>
+                    <li><strong>Procesamiento Local de IA</strong>: Toda la identificación de razas ocurre en tu iPhone/iPad</li>
+                    <li><strong>Almacenamiento Solo en Dispositivo</strong>: Todos los datos de la app permanecen en tu dispositivo</li>
+                    <li><strong>No Se Requiere Internet</strong>: La funcionalidad principal funciona completamente offline</li>
+                    <li><strong>Sin Servidores</strong>: No operamos servidores que reciban o almacenen tus datos</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Compatibilidad con iOS 18.6+</h2>
+                <p>Perro Scan está optimizado para iOS 18.6 y versiones posteriores, asegurando:</p>
+                <ul>
+                    <li><strong>Controles de Privacidad Mejorados</strong>: Aprovecha las últimas características de privacidad de iOS</li>
+                    <li><strong>Rendimiento Mejorado</strong>: Optimizado para las últimas capacidades de procesamiento de IA de iOS</li>
+                    <li><strong>Actualizaciones de Seguridad</strong>: Se beneficia de las mejoras de seguridad de iOS 18.6+</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Información de Contacto</h2>
+                <p>Si tienes alguna pregunta sobre esta Política de Privacidad, por favor contáctanos a través del App Store.</p>
+            </div>
         </div>
 
-        <div class="section">
-            <h2>How the App Works</h2>
-            <p>Perro Scan operates entirely <strong>on your device</strong> using:</p>
-            <ul>
-                <li><strong>Local AI Processing</strong>: All breed identification happens on your iPhone/iPad</li>
-                <li><strong>Device-Only Storage</strong>: All app data remains on your device</li>
-                <li><strong>No Internet Required</strong>: Core functionality works completely offline</li>
-                <li><strong>No Servers</strong>: We do not operate servers that receive or store your data</li>
-            </ul>
+        <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; color: #666; font-size: 14px;">
+            <div class="lang-en">
+                <p>© 2025 Perro Scan. Privacy-first AI dog breed identification for iOS 18.6+.</p>
+            </div>
+            <div class="lang-es">
+                <p>© 2025 Perro Scan. Identificación de razas de perros con IA que prioriza la privacidad para iOS 18.6+.</p>
+            </div>
         </div>
     </div>
+
+    <script>
+        function toggleLanguage() {
+            const html = document.documentElement;
+            const langBtn = document.getElementById('lang-btn');
+            const currentLang = html.getAttribute('data-lang') || 'en';
+            
+            if (currentLang === 'en') {
+                html.setAttribute('data-lang', 'es');
+                html.setAttribute('lang', 'es');
+                langBtn.innerHTML = '🇺🇸 English';
+                localStorage.setItem('preferredLanguage', 'es');
+            } else {
+                html.setAttribute('data-lang', 'en');
+                html.setAttribute('lang', 'en');
+                langBtn.innerHTML = '🇪🇸 Español';
+                localStorage.setItem('preferredLanguage', 'en');
+            }
+        }
+        
+        // Load saved language preference on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+            const html = document.documentElement;
+            const langBtn = document.getElementById('lang-btn');
+            
+            if (savedLang === 'es') {
+                html.setAttribute('data-lang', 'es');
+                html.setAttribute('lang', 'es');
+                langBtn.innerHTML = '🇺🇸 English';
+            } else {
+                html.setAttribute('data-lang', 'en');
+                html.setAttribute('lang', 'en');
+                langBtn.innerHTML = '🇪🇸 Español';
+            }
+        });
+    </script>
 </body>
 </html>

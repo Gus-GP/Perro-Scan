@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html-lang">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perro Scan - Support</title>
+    <title>Perro Scan - AI Dog Breed ID App for iOS 18.6+</title>
     
     <!-- Custom Favicon using your Light_Logo -->
     <link rel="icon" type="image/png" href="Light_Logo.png">
@@ -27,6 +27,7 @@
         nav { 
             margin-bottom: 30px; 
             text-align: center;
+            position: relative;
         }
         nav a { 
             margin-right: 20px; 
@@ -35,6 +36,25 @@
             font-weight: 500;
         }
         nav a:hover { color: #0056b3; }
+        
+        /* Language Switcher */
+        .lang-switcher {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #007AFF;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .lang-switcher:hover {
+            background: #0056b3;
+        }
+        
         h1 { 
             color: #333; 
             text-align: center;
@@ -74,6 +94,49 @@
         }
         .section li {
             margin-bottom: 8px;
+        }
+        
+        /* App Store Button */
+        .app-store-section {
+            text-align: center;
+            margin: 30px 0;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border: 2px solid #007AFF;
+        }
+
+        .app-store-section h2 {
+            color: #333;
+            border: none;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+
+        .app-store-button {
+            display: inline-block;
+            margin: 10px;
+            transition: transform 0.2s ease;
+        }
+
+        .app-store-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .app-store-button img {
+            height: 60px;
+            width: auto;
+            border-radius: 12px;
+        }
+
+        .ios-requirement {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #007AFF;
+            font-size: 14px;
+            text-align: left;
         }
         
         /* Donate Section Styling */
@@ -119,101 +182,270 @@
             border-radius: 10px;
             border-left: 4px solid #007AFF;
         }
+        
+        /* Hide/Show content based on language */
+        .lang-en { display: block; }
+        .lang-es { display: none; }
+        html[data-lang="es"] .lang-en { display: none; }
+        html[data-lang="es"] .lang-es { display: block; }
     </style>
 </head>
 <body>
     <div class="container">
         <nav>
-            <a href="index.html">🏠 Support</a>
-            <a href="privacy.html">🔒 Privacy Policy</a>
+            <button class="lang-switcher" onclick="toggleLanguage()" id="lang-btn">🇪🇸 Español</button>
+            
+            <!-- English Navigation -->
+            <div class="lang-en">
+                <a href="index.html">🏠 Support</a>
+                <a href="privacy.html">🔒 Privacy Policy</a>
+            </div>
+            
+            <!-- Spanish Navigation -->
+            <div class="lang-es">
+                <a href="index.html">🏠 Soporte</a>
+                <a href="privacy.html">🔒 Política de Privacidad</a>
+            </div>
         </nav>
         
         <h1>
             <img src="Light_Logo.png" alt="Perro Scan Logo" class="logo-icon">
             Perro Scan
         </h1>
-        <p class="subtitle">AI-Powered Dog Breed Identification</p>
         
-        <div class="section">
-            <h2>
-                ℹ️ About the App
-            </h2>
-            <p>Perro Scan is an AI-powered dog breed identification app that works completely offline on your device for complete privacy. Simply take a photo or choose from your library to get instant, accurate breed identification results.</p>
-        </div>
-
-        <div class="section">
-            <h2>🔧 How to Use</h2>
-            <ol>
-                <li><strong>Take a photo</strong> or choose from your library</li>
-                <li><strong>Get instant results</strong> with breed identification and confidence scores</li>
-                <li><strong>View detailed information</strong> about the identified breed</li>
-                <li><strong>Share results</strong> with friends via social media or PDF reports</li>
-                <li><strong>Explore the breed library</strong> with 133+ dog breeds</li>
-            </ol>
-        </div>
-
-        <div class="section">
-            <h2>🛠️ Troubleshooting</h2>
-            <ul>
-                <li><strong>Photo quality:</strong> Make sure photos are clear and well-lit</li>
-                <li><strong>Best shots:</strong> Full-body or clear head shots work best</li>
-                <li><strong>Mixed breeds:</strong> The app can identify mixed breed combinations</li>
-                <li><strong>Offline use:</strong> Core functionality works without internet</li>
-                <li><strong>Results:</strong> For entertainment and educational purposes</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>⭐ Features</h2>
-            <ul>
-                <li>🔍 <strong>133+ Dog Breeds</strong> - Comprehensive breed database</li>
-                <li>📊 <strong>Visual Results</strong> - Pie charts, bar graphs, and detailed tables</li>
-                <li>🔒 <strong>Complete Privacy</strong> - All processing happens on your device</li>
-                <li>📱 <strong>iPad Optimized</strong> - Responsive design for all screen sizes</li>
-                <li>📄 <strong>PDF Reports</strong> - Generate professional breed analysis reports</li>
-                <li>🎨 <strong>Social Sharing</strong> - Beautiful images ready for social media</li>
-            </ul>
-        </div>
-
-        <!-- Donate Section with Your PayPal Button -->
-        <div class="donate-section">
-            <h2>
-                Support Perro Scan Development
-            </h2>
-            <p>If Perro Scan helped identify your dog's breed, consider supporting future updates!</p>
-            <p>Your donation helps keep the app <strong>free</strong>, <strong>private</strong>, and <strong>ad-free</strong> for everyone.</p>
+        <!-- English Content -->
+        <div class="lang-en">
+            <p class="subtitle">AI-Powered Dog Breed Identification for iOS 18.6+</p>
             
-            <div class="paypal-button-container">
-                <form action="https://www.paypal.com/donate" method="post" target="_top">
-                    <input type="hidden" name="business" value="NXS8UQK2MEF6E" />
-                    <input type="hidden" name="no_recurring" value="0" />
-                    <input type="hidden" name="currency_code" value="USD" />
-                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-                    <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-                </form>
+            <div class="app-store-section">
+                <h2>📱 Download Perro Scan</h2>
+                <p><strong>Available now on the App Store for iOS 18.6+</strong></p>
+                
+                <a href="https://apps.apple.com/us/app/perro-scan/id6752816612" target="_blank" class="app-store-button">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+                </a>
+                
+                <div class="ios-requirement">
+                    <strong>📋 System Requirements:</strong><br>
+                    • iOS 18.6 or later<br>
+                    • iPhone and iPad compatible<br>
+                    • Works offline - no internet connection required
+                </div>
             </div>
             
-            <p style="font-size: 14px; margin-top: 15px; opacity: 0.9;">
-                🔒 Secure payments processed by PayPal<br>
-                Every donation helps support continued development and new features!
-            </p>
+            <div class="section">
+                <h2>ℹ️ About the App</h2>
+                <p>Perro Scan is an AI-powered dog breed identification app available on the App Store for iOS 18.6+. The app works completely offline on your device for complete privacy. Simply take a photo or choose from your library to get instant, accurate breed identification results.</p>
+            </div>
+
+            <div class="section">
+                <h2>🔧 How to Use</h2>
+                <ol>
+                    <li><strong>Take a photo</strong> or choose from your library</li>
+                    <li><strong>Get instant results</strong> with breed identification and confidence scores</li>
+                    <li><strong>View detailed information</strong> about the identified breed</li>
+                    <li><strong>Share results</strong> with friends via social media or PDF reports</li>
+                    <li><strong>Explore the breed library</strong> with 133+ dog breeds</li>
+                </ol>
+            </div>
+
+            <div class="section">
+                <h2>🛠️ Troubleshooting</h2>
+                <ul>
+                    <li><strong>Photo quality:</strong> Make sure photos are clear and well-lit</li>
+                    <li><strong>Best shots:</strong> Full-body or clear head shots work best</li>
+                    <li><strong>Mixed breeds:</strong> The app can identify mixed breed combinations</li>
+                    <li><strong>Offline use:</strong> Core functionality works without internet</li>
+                    <li><strong>Results:</strong> For entertainment and educational purposes</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>⭐ Features</h2>
+                <ul>
+                    <li>📱 <strong>iOS 18.6+ Compatible</strong> - Optimized for the latest iOS features</li>
+                    <li>🔍 <strong>133+ Dog Breeds</strong> - Comprehensive breed database</li>
+                    <li>📊 <strong>Visual Results</strong> - Pie charts, bar graphs, and detailed tables</li>
+                    <li>🔒 <strong>Complete Privacy</strong> - All processing happens on your device</li>
+                    <li>📱 <strong>iPad Optimized</strong> - Responsive design for all screen sizes</li>
+                    <li>📄 <strong>PDF Reports</strong> - Generate professional breed analysis reports</li>
+                    <li>🎨 <strong>Social Sharing</strong> - Beautiful images ready for social media</li>
+                </ul>
+            </div>
+
+            <div class="donate-section">
+                <h2>Support Perro Scan Development</h2>
+                <p>If Perro Scan helped identify your dog's breed, consider supporting future updates!</p>
+                <p>Your donation helps keep the app <strong>free</strong>, <strong>private</strong>, and <strong>ad-free</strong> for everyone.</p>
+                
+                <div class="paypal-button-container">
+                    <form action="https://www.paypal.com/donate" method="post" target="_top">
+                        <input type="hidden" name="business" value="NXS8UQK2MEF6E" />
+                        <input type="hidden" name="no_recurring" value="0" />
+                        <input type="hidden" name="currency_code" value="USD" />
+                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+                        <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+                    </form>
+                </div>
+                
+                <p style="font-size: 14px; margin-top: 15px; opacity: 0.9;">
+                    🔒 Secure payments processed by PayPal<br>
+                    Every donation helps support continued development and new features!
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>
+                    <img src="Light_Logo.png" alt="" class="section-icon">
+                    Privacy & Security
+                </h2>
+                <p>🔒 All photos stay on your device - nothing is uploaded to servers.<br>
+                📱 We don't collect or store any personal information.<br>
+                🛡️ No tracking, analytics, or data sharing.<br>
+                <a href="privacy.html"><strong>View our complete Privacy Policy →</strong></a></p>
+            </div>
         </div>
 
-        <div class="section">
-            <h2>
-                <img src="Light_Logo.png" alt="" class="section-icon">
-                Privacy & Security
-            </h2>
-            <p>🔒 All photos stay on your device - nothing is uploaded to servers.<br>
-            📱 We don't collect or store any personal information.<br>
-            🛡️ No tracking, analytics, or data sharing.<br>
-            <a href="privacy.html"><strong>View our complete Privacy Policy →</strong></a></p>
+        <!-- Spanish Content -->
+        <div class="lang-es">
+            <p class="subtitle">Identificación de Razas de Perros con IA para iOS 18.6+</p>
+            
+            <div class="app-store-section">
+                <h2>📱 Descargar Perro Scan</h2>
+                <p><strong>Disponible ahora en el App Store para iOS 18.6+</strong></p>
+                
+                <a href="https://apps.apple.com/app/your-app-id" target="_blank" class="app-store-button">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Descargar en el App Store">
+                </a>
+                
+                <div class="ios-requirement">
+                    <strong>📋 Requisitos del Sistema:</strong><br>
+                    • iOS 18.6 o posterior<br>
+                    • Compatible con iPhone e iPad<br>
+                    • Funciona offline - no se requiere conexión a internet
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>ℹ️ Acerca de la App</h2>
+                <p>Perro Scan es una aplicación de identificación de razas de perros impulsada por IA disponible en el App Store para iOS 18.6+. La app funciona completamente offline en tu dispositivo para una privacidad total. Simplemente toma una foto o elige de tu biblioteca para obtener resultados instantáneos y precisos de identificación de razas.</p>
+            </div>
+
+            <div class="section">
+                <h2>🔧 Cómo Usar</h2>
+                <ol>
+                    <li><strong>Toma una foto</strong> o elige de tu biblioteca</li>
+                    <li><strong>Obtén resultados instantáneos</strong> con identificación de razas y puntajes de confianza</li>
+                    <li><strong>Ve información detallada</strong> sobre la raza identificada</li>
+                    <li><strong>Comparte resultados</strong> con amigos a través de redes sociales o reportes PDF</li>
+                    <li><strong>Explora la biblioteca de razas</strong> con más de 133 razas de perros</li>
+                </ol>
+            </div>
+
+            <div class="section">
+                <h2>🛠️ Solución de Problemas</h2>
+                <ul>
+                    <li><strong>Calidad de foto:</strong> Asegúrate de que las fotos sean claras y bien iluminadas</li>
+                    <li><strong>Mejores tomas:</strong> Las fotos de cuerpo completo o de la cabeza funcionan mejor</li>
+                    <li><strong>Razas mixtas:</strong> La app puede identificar combinaciones de razas mixtas</li>
+                    <li><strong>Uso offline:</strong> La funcionalidad principal funciona sin internet</li>
+                    <li><strong>Resultados:</strong> Para propósitos de entretenimiento y educativos</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>⭐ Características</h2>
+                <ul>
+                    <li>📱 <strong>Compatible con iOS 18.6+</strong> - Optimizado para las últimas características de iOS</li>
+                    <li>🔍 <strong>Más de 133 Razas de Perros</strong> - Base de datos completa de razas</li>
+                    <li>📊 <strong>Resultados Visuales</strong> - Gráficos circulares, de barras y tablas detalladas</li>
+                    <li>🔒 <strong>Privacidad Completa</strong> - Todo el procesamiento ocurre en tu dispositivo</li>
+                    <li>📱 <strong>Optimizado para iPad</strong> - Diseño responsivo para todos los tamaños de pantalla</li>
+                    <li>📄 <strong>Reportes PDF</strong> - Genera reportes profesionales de análisis de razas</li>
+                    <li>🎨 <strong>Compartir Social</strong> - Imágenes hermosas listas para redes sociales</li>
+                </ul>
+            </div>
+
+            <div class="donate-section">
+                <h2>Apoya el Desarrollo de Perro Scan</h2>
+                <p>¡Si Perro Scan te ayudó a identificar la raza de tu perro, considera apoyar futuras actualizaciones!</p>
+                <p>Tu donación ayuda a mantener la app <strong>gratis</strong>, <strong>privada</strong> y <strong>sin anuncios</strong> para todos.</p>
+                
+                <div class="paypal-button-container">
+                    <form action="https://www.paypal.com/donate" method="post" target="_top">
+                        <input type="hidden" name="business" value="NXS8UQK2MEF6E" />
+                        <input type="hidden" name="no_recurring" value="0" />
+                        <input type="hidden" name="currency_code" value="USD" />
+                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+                        <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+                    </form>
+                </div>
+                
+                <p style="font-size: 14px; margin-top: 15px; opacity: 0.9;">
+                    🔒 Pagos seguros procesados por PayPal<br>
+                    ¡Cada donación ayuda a apoyar el desarrollo continuo y nuevas características!
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>
+                    <img src="Light_Logo.png" alt="" class="section-icon">
+                    Privacidad y Seguridad
+                </h2>
+                <p>🔒 Todas las fotos se quedan en tu dispositivo - nada se sube a servidores.<br>
+                📱 No recolectamos ni almacenamos información personal.<br>
+                🛡️ Sin rastreo, análisis o intercambio de datos.<br>
+                <a href="privacy.html"><strong>Ver nuestra Política de Privacidad completa →</strong></a></p>
+            </div>
         </div>
 
         <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; color: #666; font-size: 14px;">
-            <p>© 2025 Perro Scan. Made with ❤️ for dog lovers everywhere.</p>
-            <p>Results are for entertainment and educational purposes.</p>
+            <div class="lang-en">
+                <p>© 2025 Perro Scan. Made with ❤️ for dog lovers everywhere.</p>
+                <p>Results are for entertainment and educational purposes.</p>
+            </div>
+            <div class="lang-es">
+                <p>© 2025 Perro Scan. Hecho con ❤️ para amantes de perros en todas partes.</p>
+                <p>Los resultados son para propósitos de entretenimiento y educativos.</p>
+            </div>
         </div>
     </div>
+
+    <script>
+        function toggleLanguage() {
+            const html = document.documentElement;
+            const langBtn = document.getElementById('lang-btn');
+            const currentLang = html.getAttribute('data-lang') || 'en';
+            
+            if (currentLang === 'en') {
+                html.setAttribute('data-lang', 'es');
+                html.setAttribute('lang', 'es');
+                langBtn.innerHTML = '🇺🇸 English';
+                localStorage.setItem('preferredLanguage', 'es');
+            } else {
+                html.setAttribute('data-lang', 'en');
+                html.setAttribute('lang', 'en');
+                langBtn.innerHTML = '🇪🇸 Español';
+                localStorage.setItem('preferredLanguage', 'en');
+            }
+        }
+        
+        // Load saved language preference on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+            const html = document.documentElement;
+            const langBtn = document.getElementById('lang-btn');
+            
+            if (savedLang === 'es') {
+                html.setAttribute('data-lang', 'es');
+                html.setAttribute('lang', 'es');
+                langBtn.innerHTML = '🇺🇸 English';
+            } else {
+                html.setAttribute('data-lang', 'en');
+                html.setAttribute('lang', 'en');
+                langBtn.innerHTML = '🇪🇸 Español';
+            }
+        });
+    </script>
 </body>
 </html>
