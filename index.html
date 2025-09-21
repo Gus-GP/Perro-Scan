@@ -188,6 +188,106 @@
         .lang-es { display: none; }
         html[data-lang="es"] .lang-en { display: none; }
         html[data-lang="es"] .lang-es { display: block; }
+        
+        /* Responsive styles for mobile */
+        @media (max-width: 600px) {
+            body {
+                margin: 10px;
+                font-size: 16px;
+            }
+            .container {
+                padding: 12px;
+                border-radius: 8px;
+                box-shadow: 0 1px 5px rgba(0,0,0,0.08);
+            }
+            nav {
+                margin-bottom: 18px;
+            }
+            nav a {
+                margin-right: 10px;
+                font-size: 15px;
+            }
+            .lang-switcher {
+                padding: 6px 10px;
+                font-size: 13px;
+                border-radius: 16px;
+            }
+            h1 {
+                font-size: 1.5em;
+                gap: 8px;
+            }
+            .logo-icon {
+                width: 28px;
+                height: 28px;
+            }
+            .subtitle {
+                font-size: 15px;
+                margin-bottom: 18px;
+            }
+            .section {
+                margin-bottom: 18px;
+            }
+            .section h2 {
+                font-size: 1.1em;
+                gap: 6px;
+                padding-bottom: 3px;
+            }
+            .section-icon {
+                width: 18px;
+                height: 18px;
+            }
+            .app-store-section {
+                margin: 18px 0;
+                padding: 12px;
+                border-radius: 10px;
+            }
+            .app-store-section h2 {
+                font-size: 1.1em;
+                margin-bottom: 8px;
+            }
+            .app-store-button img {
+                height: 44px;
+                border-radius: 8px;
+            }
+            .ios-requirement {
+                padding: 10px;
+                font-size: 13px;
+                border-radius: 7px;
+                margin: 12px 0;
+            }
+            .donate-section {
+                margin: 22px 0;
+                padding: 14px;
+                border-radius: 10px;
+                font-size: 15px;
+            }
+            .donate-section h2 {
+                font-size: 1.1em;
+                margin-bottom: 8px;
+                gap: 6px;
+            }
+            .paypal-button-container {
+                padding: 10px 12px;
+                border-radius: 7px;
+            }
+            .contact-info {
+                padding: 12px;
+                border-radius: 7px;
+                font-size: 14px;
+            }
+            .section ul, .section ol {
+                padding-left: 16px;
+            }
+            .section li {
+                margin-bottom: 5px;
+            }
+            /* Footer */
+            div[style*="text-align: center"] {
+                font-size: 12px !important;
+                margin-top: 22px !important;
+                padding-top: 10px !important;
+            }
+        }
     </style>
 </head>
 <body>
