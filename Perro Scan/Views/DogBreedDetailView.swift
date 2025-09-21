@@ -74,6 +74,8 @@ struct DogBreedDetailView: View {
                     }
                     .padding(.horizontal)
                 }
+                .frame(maxWidth: UIDevice.current.userInterfaceIdiom == .pad ? 800 : .infinity)
+                .padding(.horizontal, UIDevice.current.userInterfaceIdiom == .pad ? 40 : 0)
             }
             .navigationTitle("")
             .navigationBarTitleDisplayMode(.inline)
@@ -240,26 +242,27 @@ struct DogBreedDetailView: View {
         }
     }
     
-    // Rest of your existing implementation stays the same...
+    // MARK: - Fixed Sample Images Section (No Cropping)
     private var sampleImagesSection: some View {
         VStack(alignment: .leading, spacing: 12) {
             if sampleImages.count == 1 {
+                // Single image - no cropping, maintain aspect ratio
                 Image(uiImage: sampleImages[0])
                     .resizable()
-                    .scaledToFill()
-                    .frame(maxHeight: 300)
-                    .clipped()
+                    .scaledToFit() // Changed from scaledToFill
+                    .frame(maxHeight: adaptiveMaxImageHeight())
                     .cornerRadius(12)
                     .padding(.horizontal)
-            } else {
+                    
+            } else if sampleImages.count > 1 {
+                // Multiple images - no cropping
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 12) {
                         ForEach(Array(sampleImages.enumerated()), id: \.offset) { index, image in
                             Image(uiImage: image)
                                 .resizable()
-                                .scaledToFill()
-                                .frame(width: 200, height: 150)
-                                .clipped()
+                                .scaledToFit() // Changed from scaledToFill
+                                .frame(maxWidth: adaptiveImageWidth(), maxHeight: adaptiveImageHeight())
                                 .cornerRadius(12)
                         }
                     }
@@ -268,6 +271,32 @@ struct DogBreedDetailView: View {
             }
         }
     }
+
+    // MARK: - Updated Adaptive Sizing Functions
+    private func adaptiveMaxImageHeight() -> CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return 400 // Max height for iPad
+        } else {
+            return 300 // Max height for iPhone
+        }
+    }
+
+    private func adaptiveImageHeight() -> CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return 200 // Max height for iPad multiple images
+        } else {
+            return 150 // Max height for iPhone multiple images
+        }
+    }
+
+    private func adaptiveImageWidth() -> CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return 280 // Max width for iPad
+        } else {
+            return 200 // Max width for iPhone
+        }
+    }
+
     
     private func loadSampleImages() {
         Task {
