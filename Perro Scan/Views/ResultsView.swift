@@ -64,7 +64,7 @@ struct ResultsView: View {
     
     private var chartHeader: some View {
         Text(selectedTab == 0 ? "Top 5 Breeds" :
-             selectedTab == 1 ? "Probability Distribution" :
+             selectedTab == 1 ? "Dog Breed Distribution" :
              "All Results")
             .font(.title)
             .fontWeight(.bold)
