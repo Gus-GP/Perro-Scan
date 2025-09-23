@@ -1,42 +1,49 @@
 <!DOCTYPE html>
 <html lang="en" id="html-lang">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perro Scan - AI Dog Breed ID App for iOS 18.6+</title>
-    
-    <!-- Custom Favicon using your Light_Logo -->
-    <link rel="icon" type="image/png" href="Light_Logo.png">
-    <link rel="apple-touch-icon" href="Light_Logo.png">
-    
+
+    <!-- Custom Favicon using your light_logo -->
+    <link rel="icon" type="image/png" href="./web_images/light_logo.png">
+    <link rel="apple-touch-icon" href="./web_images/light_logo.png">
+
     <style>
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
-            margin: 40px; 
-            line-height: 1.6; 
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 40px;
+            line-height: 1.6;
             background: #fafafa;
         }
-        .container { 
-            max-width: 800px; 
-            margin: 0 auto; 
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
             background: white;
             padding: 40px;
             border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-        nav { 
-            margin-bottom: 30px; 
+
+        nav {
+            margin-bottom: 30px;
             text-align: center;
             position: relative;
         }
-        nav a { 
-            margin-right: 20px; 
-            text-decoration: none; 
-            color: #007AFF; 
+
+        nav a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: #007AFF;
             font-weight: 500;
         }
-        nav a:hover { color: #0056b3; }
-        
+
+        nav a:hover {
+            color: #0056b3;
+        }
+
         /* Language Switcher */
         .lang-switcher {
             position: absolute;
@@ -51,12 +58,13 @@
             cursor: pointer;
             transition: background 0.3s ease;
         }
+
         .lang-switcher:hover {
             background: #0056b3;
         }
-        
-        h1 { 
-            color: #333; 
+
+        h1 {
+            color: #333;
             text-align: center;
             margin-bottom: 10px;
             display: flex;
@@ -64,19 +72,23 @@
             justify-content: center;
             gap: 15px;
         }
+
         .logo-icon {
             width: 40px;
             height: 40px;
         }
+
         .subtitle {
             text-align: center;
             color: #666;
             margin-bottom: 30px;
             font-size: 18px;
         }
-        .section { 
-            margin-bottom: 30px; 
+
+        .section {
+            margin-bottom: 30px;
         }
+
         .section h2 {
             color: #333;
             border-bottom: 2px solid #007AFF;
@@ -85,17 +97,21 @@
             align-items: center;
             gap: 10px;
         }
+
         .section-icon {
             width: 24px;
             height: 24px;
         }
-        .section ul, .section ol {
+
+        .section ul,
+        .section ol {
             padding-left: 20px;
         }
+
         .section li {
             margin-bottom: 8px;
         }
-        
+
         /* App Store Button */
         .app-store-section {
             text-align: center;
@@ -138,7 +154,7 @@
             font-size: 14px;
             text-align: left;
         }
-        
+
         /* Donate Section Styling */
         .donate-section {
             text-align: center;
@@ -148,6 +164,7 @@
             border-radius: 15px;
             color: white;
         }
+
         .donate-section h2 {
             color: white;
             border: none;
@@ -157,130 +174,165 @@
             justify-content: center;
             gap: 10px;
         }
+
         .donate-section p {
             margin-bottom: 20px;
             font-size: 16px;
         }
-        
+
         /* Custom PayPal Button Styling */
         .paypal-button-container {
             display: inline-block;
             background: white;
             padding: 15px 25px;
             border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             transition: transform 0.2s ease;
         }
+
         .paypal-button-container:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
-        
+
         .contact-info {
             background: #f8f9fa;
             padding: 20px;
             border-radius: 10px;
             border-left: 4px solid #007AFF;
         }
-        
+
         /* Hide/Show content based on language */
-        .lang-en { display: block; }
-        .lang-es { display: none; }
-        html[data-lang="es"] .lang-en { display: none; }
-        html[data-lang="es"] .lang-es { display: block; }
-        
+        .lang-en {
+            display: block;
+        }
+
+        .lang-es {
+            display: none;
+        }
+
+        html[data-lang="es"] .lang-en {
+            display: none;
+        }
+
+        html[data-lang="es"] .lang-es {
+            display: block;
+        }
+
         /* Responsive styles for mobile */
         @media (max-width: 600px) {
             body {
                 margin: 10px;
                 font-size: 16px;
             }
+
             .container {
                 padding: 12px;
                 border-radius: 8px;
-                box-shadow: 0 1px 5px rgba(0,0,0,0.08);
+                box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
             }
+
             nav {
                 margin-bottom: 18px;
             }
+
             nav a {
                 margin-right: 10px;
                 font-size: 15px;
             }
+
             .lang-switcher {
                 padding: 6px 10px;
                 font-size: 13px;
                 border-radius: 16px;
             }
+
             h1 {
                 font-size: 1.5em;
                 gap: 8px;
             }
+
             .logo-icon {
                 width: 28px;
                 height: 28px;
             }
+
             .subtitle {
                 font-size: 15px;
                 margin-bottom: 18px;
             }
+
             .section {
                 margin-bottom: 18px;
             }
+
             .section h2 {
                 font-size: 1.1em;
                 gap: 6px;
                 padding-bottom: 3px;
             }
+
             .section-icon {
                 width: 18px;
                 height: 18px;
             }
+
             .app-store-section {
                 margin: 18px 0;
                 padding: 12px;
                 border-radius: 10px;
             }
+
             .app-store-section h2 {
                 font-size: 1.1em;
                 margin-bottom: 8px;
             }
+
             .app-store-button img {
                 height: 44px;
                 border-radius: 8px;
             }
+
             .ios-requirement {
                 padding: 10px;
                 font-size: 13px;
                 border-radius: 7px;
                 margin: 12px 0;
             }
+
             .donate-section {
                 margin: 22px 0;
                 padding: 14px;
                 border-radius: 10px;
                 font-size: 15px;
             }
+
             .donate-section h2 {
                 font-size: 1.1em;
                 margin-bottom: 8px;
                 gap: 6px;
             }
+
             .paypal-button-container {
                 padding: 10px 12px;
                 border-radius: 7px;
             }
+
             .contact-info {
                 padding: 12px;
                 border-radius: 7px;
                 font-size: 14px;
             }
-            .section ul, .section ol {
+
+            .section ul,
+            .section ol {
                 padding-left: 16px;
             }
+
             .section li {
                 margin-bottom: 5px;
             }
+
             /* Footer */
             div[style*="text-align: center"] {
                 font-size: 12px !important;
@@ -290,41 +342,44 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <nav>
-            <button class="lang-switcher" onclick="toggleLanguage()" id="lang-btn">🇪🇸 Español</button>
-            
+            <button class="lang-switcher" onclick="toggleLanguage()" id="lang-btn">Español</button>
+
             <!-- English Navigation -->
             <div class="lang-en">
                 <a href="index.html">🏠 Support</a>
                 <a href="privacy.html">🔒 Privacy Policy</a>
             </div>
-            
+
             <!-- Spanish Navigation -->
             <div class="lang-es">
-                <a href="index.html">🏠 Soporte</a>
+                <a href="index.html">🏠 Apoyo</a>
                 <a href="privacy.html">🔒 Privacidad</a>
             </div>
         </nav>
-        
+
         <h1>
-            <img src="Light_Logo.png" alt="Perro Scan Logo" class="logo-icon">
+            <img src="./web_images/light_logo.png" alt="Perro Scan Logo" class="logo-icon">
             Perro Scan
         </h1>
-        
+
         <!-- English Content -->
         <div class="lang-en">
             <p class="subtitle">AI-Powered Dog Breed Identification for iOS 18.6+</p>
-            
+
             <div class="app-store-section">
                 <h2>📱 Download Perro Scan</h2>
                 <p><strong>Available now on the App Store for iOS 18.6+</strong></p>
-                
-                <a href="https://apps.apple.com/us/app/perro-scan/id6752816612" target="_blank" class="app-store-button">
-                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+
+                <a href="https://apps.apple.com/us/app/perro-scan/id6752816612" target="_blank"
+                    class="app-store-button">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                        alt="Download on the App Store">
                 </a>
-                
+
                 <div class="ios-requirement">
                     <strong>📋 System Requirements:</strong><br>
                     • iOS 18.6 or later<br>
@@ -332,10 +387,12 @@
                     • Works offline - no internet connection required
                 </div>
             </div>
-            
+
             <div class="section">
                 <h2>ℹ️ About the App</h2>
-                <p>Perro Scan is an AI-powered dog breed identification app available on the App Store for iOS 18.6+. The app works completely offline on your device for complete privacy. Simply take a photo or choose from your library to get instant, accurate breed identification results.</p>
+                <p>Perro Scan is an AI-powered dog breed identification app available on the App Store for iOS 18.6+.
+                    The app works completely offline on your device for complete privacy. Simply take a photo or choose
+                    from your library to get instant, accurate breed identification results.</p>
             </div>
 
             <div class="section">
@@ -376,18 +433,20 @@
             <div class="donate-section">
                 <h2>Support Perro Scan Development</h2>
                 <p>If Perro Scan helped identify your dog's breed, consider supporting future updates!</p>
-                <p>Your donation helps keep the app <strong>free</strong>, <strong>private</strong>, and <strong>ad-free</strong> for everyone.</p>
-                
+                <p>Your donation helps keep the app <strong>free</strong>, <strong>private</strong>, and
+                    <strong>ad-free</strong> for everyone.</p>
+
                 <div class="paypal-button-container">
                     <form action="https://www.paypal.com/donate" method="post" target="_top">
                         <input type="hidden" name="business" value="NXS8UQK2MEF6E" />
                         <input type="hidden" name="no_recurring" value="0" />
                         <input type="hidden" name="currency_code" value="USD" />
-                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-                        <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"
+                            border="0" name="submit" title="PayPal - The safer, easier way to pay online!"
+                            alt="Donate with PayPal button" />
                     </form>
                 </div>
-                
+
                 <p style="font-size: 14px; margin-top: 15px; opacity: 0.9;">
                     🔒 Secure payments processed by PayPal<br>
                     Every donation helps support continued development and new features!
@@ -396,28 +455,31 @@
 
             <div class="section">
                 <h2>
-                    <img src="Light_Logo.png" alt="" class="section-icon">
+                    <img src="./web_images/light_logo.png" alt="" class="section-icon">
                     Privacy & Security
                 </h2>
                 <p>🔒 All photos stay on your device - nothing is uploaded to servers.<br>
-                📱 We don't collect or store any personal information.<br>
-                🛡️ No tracking, analytics, or data sharing.<br>
-                <a href="privacy.html"><strong>View our complete Privacy Policy →</strong></a></p>
+                    📱 We don't collect or store any personal information.<br>
+                    🛡️ No tracking, analytics, or data sharing.<br>
+                    <a href="privacy.html"><strong>View our complete Privacy Policy →</strong></a>
+                </p>
             </div>
         </div>
 
         <!-- Spanish Content -->
         <div class="lang-es">
             <p class="subtitle">Identificación de Razas de Perros con IA para iOS 18.6+</p>
-            
+
             <div class="app-store-section">
                 <h2>📱 Descargar Perro Scan</h2>
                 <p><strong>Disponible ahora en el App Store para iOS 18.6+</strong></p>
-                
-                <a href="https://apps.apple.com/app/your-app-id" target="_blank" class="app-store-button">
-                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Descargar en el App Store">
+
+                <a href="https://apps.apple.com/us/app/perro-scan/id6752816612" target="_blank"
+                    class="app-store-button">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                        alt="Descargar en el App Store">
                 </a>
-                
+
                 <div class="ios-requirement">
                     <strong>📋 Requisitos del Sistema:</strong><br>
                     • iOS 18.6 o posterior<br>
@@ -425,17 +487,21 @@
                     • Funciona offline - no se requiere conexión a internet
                 </div>
             </div>
-            
+
             <div class="section">
                 <h2>ℹ️ Acerca de la App</h2>
-                <p>Perro Scan es una aplicación de identificación de razas de perros impulsada por IA disponible en el App Store para iOS 18.6+. La app funciona completamente offline en tu dispositivo para una privacidad total. Simplemente toma una foto o elige de tu biblioteca para obtener resultados instantáneos y precisos de identificación de razas.</p>
+                <p>Perro Scan es una aplicación de identificación de razas de perros impulsada por IA disponible en el
+                    App Store para iOS 18.6+. La app funciona completamente offline en tu dispositivo para una
+                    privacidad total. Simplemente toma una foto o elige de tu biblioteca para obtener resultados
+                    instantáneos y precisos de identificación de razas.</p>
             </div>
 
             <div class="section">
                 <h2>🔧 Cómo Usar</h2>
                 <ol>
                     <li><strong>Toma una foto</strong> o elige de tu biblioteca</li>
-                    <li><strong>Obtén resultados instantáneos</strong> con identificación de razas y puntajes de confianza</li>
+                    <li><strong>Obtén resultados instantáneos</strong> con identificación de razas y puntajes de
+                        confianza</li>
                     <li><strong>Ve información detallada</strong> sobre la raza identificada</li>
                     <li><strong>Comparte resultados</strong> con amigos a través de redes sociales o reportes PDF</li>
                     <li><strong>Explora la biblioteca de razas</strong> con más de 133 razas de perros</li>
@@ -456,11 +522,14 @@
             <div class="section">
                 <h2>⭐ Características</h2>
                 <ul>
-                    <li>📱 <strong>Compatible con iOS 18.6+</strong> - Optimizado para las últimas características de iOS</li>
+                    <li>📱 <strong>Compatible con iOS 18.6+</strong> - Optimizado para las últimas características de
+                        iOS</li>
                     <li>🔍 <strong>Más de 133 Razas de Perros</strong> - Base de datos completa de razas</li>
-                    <li>📊 <strong>Resultados Visuales</strong> - Gráficos circulares, de barras y tablas detalladas</li>
+                    <li>📊 <strong>Resultados Visuales</strong> - Gráficos circulares, de barras y tablas detalladas
+                    </li>
                     <li>🔒 <strong>Privacidad Completa</strong> - Todo el procesamiento ocurre en tu dispositivo</li>
-                    <li>📱 <strong>Optimizado para iPad</strong> - Diseño responsivo para todos los tamaños de pantalla</li>
+                    <li>📱 <strong>Optimizado para iPad</strong> - Diseño responsivo para todos los tamaños de pantalla
+                    </li>
                     <li>📄 <strong>Reportes PDF</strong> - Genera reportes profesionales de análisis de razas</li>
                     <li>🎨 <strong>Compartir Social</strong> - Imágenes hermosas listas para redes sociales</li>
                 </ul>
@@ -468,19 +537,23 @@
 
             <div class="donate-section">
                 <h2>Apoya el Desarrollo de Perro Scan</h2>
-                <p>¡Si Perro Scan te ayudó a identificar la raza de tu perro, considera apoyar futuras actualizaciones!</p>
-                <p>Tu donación ayuda a mantener la app <strong>gratis</strong>, <strong>privada</strong> y <strong>sin anuncios</strong> para todos.</p>
-                
+                <p>¡Si Perro Scan te ayudó a identificar la raza de tu perro, considera apoyar futuras actualizaciones!
+                </p>
+                <p>Tu donación ayuda a mantener la app <strong>gratis</strong>, <strong>privada</strong> y <strong>sin
+                        anuncios</strong> para todos.</p>
+
                 <div class="paypal-button-container">
                     <form action="https://www.paypal.com/donate" method="post" target="_top">
                         <input type="hidden" name="business" value="NXS8UQK2MEF6E" />
-                        <input type="hidden" name="no_recurring" value="0" />
+                        <input type="hidden" name="no_recurring" value="1" />
                         <input type="hidden" name="currency_code" value="USD" />
-                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-                        <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+                        <input type="image" src="https://www.paypalobjects.com/es_XC/i/btn/btn_donateCC_LG.gif"
+                            border="0" name="submit" title="PayPal - The safer, easier way to pay online!"
+                            alt="Donar con el botón PayPal" />
                     </form>
+
                 </div>
-                
+
                 <p style="font-size: 14px; margin-top: 15px; opacity: 0.9;">
                     🔒 Pagos seguros procesados por PayPal<br>
                     ¡Cada donación ayuda a apoyar el desarrollo continuo y nuevas características!
@@ -489,17 +562,19 @@
 
             <div class="section">
                 <h2>
-                    <img src="Light_Logo.png" alt="" class="section-icon">
+                    <img src="./web_images/light_logo.png" alt="" class="section-icon">
                     Privacidad y Seguridad
                 </h2>
                 <p>🔒 Todas las fotos se quedan en tu dispositivo - nada se sube a servidores.<br>
-                📱 No recolectamos ni almacenamos información personal.<br>
-                🛡️ Sin rastreo, análisis o intercambio de datos.<br>
-                <a href="privacy.html"><strong>Ver nuestra Política de Privacidad completa →</strong></a></p>
+                    📱 No recolectamos ni almacenamos información personal.<br>
+                    🛡️ Sin rastreo, análisis o intercambio de datos.<br>
+                    <a href="privacy.html"><strong>Ver nuestra Política de Privacidad completa →</strong></a>
+                </p>
             </div>
         </div>
 
-        <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; color: #666; font-size: 14px;">
+        <div
+            style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; color: #666; font-size: 14px;">
             <div class="lang-en">
                 <p>© 2025 Perro Scan. Made with ❤️ for dog lovers everywhere.</p>
                 <p>Results are for entertainment and educational purposes.</p>
@@ -516,36 +591,37 @@
             const html = document.documentElement;
             const langBtn = document.getElementById('lang-btn');
             const currentLang = html.getAttribute('data-lang') || 'en';
-            
+
             if (currentLang === 'en') {
                 html.setAttribute('data-lang', 'es');
                 html.setAttribute('lang', 'es');
-                langBtn.innerHTML = '🇺🇸 English';
+                langBtn.innerHTML = '🌐 English';
                 localStorage.setItem('preferredLanguage', 'es');
             } else {
                 html.setAttribute('data-lang', 'en');
                 html.setAttribute('lang', 'en');
-                langBtn.innerHTML = '🇻🇪 Español';
+                langBtn.innerHTML = '🌐 Español';
                 localStorage.setItem('preferredLanguage', 'en');
             }
         }
-        
+
         // Load saved language preference on page load
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const savedLang = localStorage.getItem('preferredLanguage') || 'en';
             const html = document.documentElement;
             const langBtn = document.getElementById('lang-btn');
-            
+
             if (savedLang === 'es') {
                 html.setAttribute('data-lang', 'es');
                 html.setAttribute('lang', 'es');
-                langBtn.innerHTML = '🇺🇸 English';
+                langBtn.innerHTML = '🌐 English';
             } else {
                 html.setAttribute('data-lang', 'en');
                 html.setAttribute('lang', 'en');
-                langBtn.innerHTML = '🇪🇸 Español';
+                langBtn.innerHTML = '🌐 Español';
             }
         });
     </script>
 </body>
+
 </html>
